@@ -1,0 +1,62 @@
+{
+    "editor.minimap.enabled": false,
+    // Vim
+    "editor.fontFamily": "commitmono nerd font mono, Consolas, '等线', monospace",
+    "workbench.colorCustomizations": {
+        // "editorCursor.foreground": "#99ddff",
+        "editorCursor.foreground": "#ffb6c1"
+    },
+    "vim.easymotion": true,
+    "vim.surround": true,
+
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-b>": false,
+    },
+    "vim.insertModeKeyBindings": [
+
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // Buffer
+        { "before": ["H"], "commands": ["workbench.action.previousEditorInGroup"] },
+        { "before": ["L"], "commands": ["workbench.action.nextEditorInGroup"] },
+        // Window
+        { "before": ["<C-h>"], "commands": ["workbench.action.navigateLeft"] },
+        { "before": ["<C-j>"], "commands": ["workbench.action.navigateDown"] },
+        { "before": ["<C-k>"], "commands": ["workbench.action.navigateUp"] },
+        { "before": ["<C-l>"], "commands": ["workbench.action.navigateRight"] },
+        { "before": ["<leader>", "|"], "commands": ["workbench.action.splitEditor"] },
+        { "before": ["<leader>", "-"], "commands": ["workbench.action.splitEditorOrthogonal"] },
+        { "before": ["<leader>", "w", "q"], "commands": ["workbench.action.closeActiveEditor"] },
+        
+        // Explorer
+        { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
+        // Terminal
+        { "before": ["<leader>", "t"], "commands": ["workbench.action.terminal.toggleTerminal"] },
+        // Quick Open
+        { "before": ["<leader>", "f"], "commands": ["workbench.action.quickOpen"] },
+        // Turn off search highlighting
+        { "before": ["C-n"], "commands": [":nohl"] },
+        // Search
+        { "before": ["s"], "after": ["<leader>", "<leader>", "/"] }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        // Paste without overriding the current register
+        { "before": ["p"], "after": [ "p", "g", "v", "y"] },
+        // Search
+        { "before": ["s"], "after": ["<leader>", "<leader>", "/"] },
+    ],
+    "vim.visualModeKeyBindings": [
+        { "before": [">"], "commands": ["editor.action.indentLines"] },
+        { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    ],
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+}
