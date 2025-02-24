@@ -5,9 +5,12 @@
     // -----------  Vim  -----------
     "editor.fontFamily": "commitmono nerd font mono, Consolas, '等线', monospace",
     "workbench.colorCustomizations": {
+        // "editorCursor.foreground": "#ffb6c1",  // Ram's hair
+        "editorCursor.foreground": "#fffaeb"  // Morgan's hair
+        // "editorCursor.foreground": "#baf5e4",  // Morgan's hair ends
+        // "editorCursor.foreground": "#e3ffff",  // Morgan's eyes
+        // "editorCursor.foreground": "#b9b6ff",  // Soft Lavender-Blue
         // "editor.selectionBackground": "#135564",
-        // "editorCursor.foreground": "#FFB6C1",
-        "editorCursor.foreground": "#B9B6FF"
     },
     "vim.easymotion": true,
     "vim.surround": true,

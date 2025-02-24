@@ -1,5 +1,5 @@
-// Place your key bindings in this file to override the defaults
 [
+    // ----------  Vim ----------
     // Move Line
     {
         "key": "alt+k",
@@ -43,4 +43,5 @@
         "command": "selectPrevPageSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
     }
+    // --------------------------
 ]
