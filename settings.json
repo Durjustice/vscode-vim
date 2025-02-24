@@ -1,10 +1,13 @@
 {
     "editor.minimap.enabled": false,
-    // Vim
+    "editor.renderWhitespace": "boundary",
+
+    // -----------  Vim  -----------
     "editor.fontFamily": "commitmono nerd font mono, Consolas, '等线', monospace",
     "workbench.colorCustomizations": {
-        // "editorCursor.foreground": "#99ddff",
-        "editorCursor.foreground": "#ffb6c1"
+        // "editor.selectionBackground": "#135564",
+        // "editorCursor.foreground": "#FFB6C1",
+        "editorCursor.foreground": "#B9B6FF"
     },
     "vim.easymotion": true,
     "vim.surround": true,
@@ -13,11 +16,17 @@
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
+
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+
+    // Keybinding
     "vim.leader": "<space>",
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false,
-        "<C-b>": false,
+        "<C-b>": false
     },
     "vim.insertModeKeyBindings": [
 
@@ -26,6 +35,7 @@
         // Buffer
         { "before": ["H"], "commands": ["workbench.action.previousEditorInGroup"] },
         { "before": ["L"], "commands": ["workbench.action.nextEditorInGroup"] },
+        { "before": ["<leader>", "d"], "commands": ["workbench.action.closeActiveEditor"] },
         // Window
         { "before": ["<C-h>"], "commands": ["workbench.action.navigateLeft"] },
         { "before": ["<C-j>"], "commands": ["workbench.action.navigateDown"] },
@@ -33,30 +43,48 @@
         { "before": ["<C-l>"], "commands": ["workbench.action.navigateRight"] },
         { "before": ["<leader>", "|"], "commands": ["workbench.action.splitEditor"] },
         { "before": ["<leader>", "-"], "commands": ["workbench.action.splitEditorOrthogonal"] },
-        { "before": ["<leader>", "w", "q"], "commands": ["workbench.action.closeActiveEditor"] },
-        
+        { "before": ["<leader>", "w", "c"], "commands": ["workbench.action.closeEditorsInGroup"] },
+
         // Explorer
         { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
+        // TODO: Search in files
+        // { "before": ["<leader>", "s"], "commands": ["workbench.action.findInFiles"] },
+        // { "before": ["<leader>", "s"], "commands": ["workbench.view.search"] },
         // Terminal
         { "before": ["<leader>", "t"], "commands": ["workbench.action.terminal.toggleTerminal"] },
         // Quick Open
-        { "before": ["<leader>", "f"], "commands": ["workbench.action.quickOpen"] },
+        { "before": ["<leader>", "F"], "commands": ["workbench.action.quickOpen"] },
         // Turn off search highlighting
-        { "before": ["C-n"], "commands": [":nohl"] },
-        // Search
-        { "before": ["s"], "after": ["<leader>", "<leader>", "/"] }
+        { "before": ["<C-n>"], "commands": [":nohl"] },
+        // Search - easymotion
+        { "before": ["s"], "after": ["<leader>", "<leader>", "/"] },
+        // Rename
+        {
+            "before": [ "<leader>", "r" ],
+            "commands": [
+                "editor.action.changeAll",
+                "extension.vim_escape",
+                "extension.vim_right",
+                "extension.vim_insert"
+            ]
+        },
+        // Format
+        { "before": ["<leader>", "f"], "commands": ["editor.action.formatSelection"] },
+        // Hover
+        { "before": ["K"], "after": ["g", "h"] }
+        // tricks: gb, af 
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         // Paste without overriding the current register
         { "before": ["p"], "after": [ "p", "g", "v", "y"] },
-        // Search
+        // Search - easymotion
         { "before": ["s"], "after": ["<leader>", "<leader>", "/"] },
+        // Format
+        { "before": ["<leader>", "f"], "commands": ["editor.action.formatSelection"] }
     ],
     "vim.visualModeKeyBindings": [
         { "before": [">"], "commands": ["editor.action.indentLines"] },
-        { "before": ["<"], "commands": ["editor.action.outdentLines"] },
-    ],
-    "extensions.experimental.affinity": {
-        "vscodevim.vim": 1
-    },
+        { "before": ["<"], "commands": ["editor.action.outdentLines"] }
+    ]
+    // ----------------------------
 }
