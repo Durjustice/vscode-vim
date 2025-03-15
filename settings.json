@@ -6,9 +6,9 @@
     "editor.fontFamily": "commitmono nerd font mono, Consolas, '等线', monospace",
     "workbench.colorCustomizations": {
         // "editorCursor.foreground": "#ffb6c1",  // Ram's hair
-        "editorCursor.foreground": "#fffaeb"  // Morgan's hair
+        // "editorCursor.foreground": "#fffaeb"  // Morgan's hair
         // "editorCursor.foreground": "#baf5e4",  // Morgan's hair ends
-        // "editorCursor.foreground": "#e3ffff",  // Morgan's eyes
+        "editorCursor.foreground": "#e3ffff",  // Morgan's eyes
         // "editorCursor.foreground": "#b9b6ff",  // Soft Lavender-Blue
         // "editor.selectionBackground": "#135564",
     },
@@ -29,7 +29,8 @@
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false,
-        "<C-b>": false
+        "<C-b>": false,
+        "<C-j>": false
     },
     "vim.insertModeKeyBindings": [
 
@@ -40,10 +41,12 @@
         { "before": ["L"], "commands": ["workbench.action.nextEditorInGroup"] },
         { "before": ["<leader>", "d"], "commands": ["workbench.action.closeActiveEditor"] },
         // Window
-        { "before": ["<C-h>"], "commands": ["workbench.action.navigateLeft"] },
-        { "before": ["<C-j>"], "commands": ["workbench.action.navigateDown"] },
-        { "before": ["<C-k>"], "commands": ["workbench.action.navigateUp"] },
-        { "before": ["<C-l>"], "commands": ["workbench.action.navigateRight"] },
+        // { "before": ["<C-h>"], "commands": ["workbench.action.navigateLeft"] },
+        // { "before": ["<C-j>"], "commands": ["workbench.action.navigateDown"] },
+        // { "before": ["<C-k>"], "commands": ["workbench.action.navigateUp"] },
+        // { "before": ["<C-l>"], "commands": ["workbench.action.navigateRight"] },
+
+        { "before": ["<C-h>"], "commands": ["workbench.action.navigateEditorGroups"] },
         { "before": ["<leader>", "|"], "commands": ["workbench.action.splitEditor"] },
         { "before": ["<leader>", "-"], "commands": ["workbench.action.splitEditorOrthogonal"] },
         { "before": ["<leader>", "w", "c"], "commands": ["workbench.action.closeEditorsInGroup"] },
@@ -56,7 +59,7 @@
         // Terminal
         { "before": ["<leader>", "t"], "commands": ["workbench.action.terminal.toggleTerminal"] },
         // Quick Open
-        { "before": ["<leader>", "F"], "commands": ["workbench.action.quickOpen"] },
+        { "before": ["<leader>", "f"], "commands": ["workbench.action.quickOpen"] },
         // Turn off search highlighting
         { "before": ["<C-n>"], "commands": [":nohl"] },
         // Search - easymotion
@@ -72,7 +75,7 @@
             ]
         },
         // Format
-        { "before": ["<leader>", "f"], "commands": ["editor.action.formatSelection"] },
+        { "before": ["<leader>", "F"], "commands": ["editor.action.formatSelection"] },
         // Hover
         { "before": ["K"], "after": ["g", "h"] }
         // tricks: gb, af 
@@ -83,11 +86,12 @@
         // Search - easymotion
         { "before": ["s"], "after": ["<leader>", "<leader>", "/"] },
         // Format
-        { "before": ["<leader>", "f"], "commands": ["editor.action.formatSelection"] }
+        { "before": ["<leader>", "F"], "commands": ["editor.action.formatSelection"] }
     ],
     "vim.visualModeKeyBindings": [
         { "before": [">"], "commands": ["editor.action.indentLines"] },
         { "before": ["<"], "commands": ["editor.action.outdentLines"] }
-    ]
+    ],
+    "workbench.editor.enablePreview": false
     // ----------------------------
 }

@@ -1,6 +1,7 @@
+// Place your key bindings in this file to override the defaults
 [
-    // ----------  Vim ----------
-    // Move Line
+    // ----------  Vim  -----------
+    // Line move
     {
         "key": "alt+k",
         "command": "editor.action.moveLinesUpAction",
@@ -11,18 +12,38 @@
         "command": "editor.action.moveLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
     },
-    // Focus editor when side bar or panel is in focus
+    // explorer
+    // {
+    //     "key": "ctrl+l",
+    //     "command": "workbench.action.focusActiveEditorGroup",
+    //     "when": "sideBarFocus"
+    // },
     {
-        "key": "ctrl+l",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "sideBarFocus"
+        "key": "a",
+        "command": "workbench.files.action.createFileFromExplorer",
+        "when": "filesExplorerFocus"
     },
     {
-        "key": "ctrl+k",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "panelFocus"
+        "key": "x",
+        "command": "filesExplorer.cut",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus && !treeFindOpen"
     },
-    // Suggestion Selection
+    {
+        "key": "y",
+        "command": "filesExplorer.copy",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
+    },
+    {
+        "key": "p",
+        "command": "filesExplorer.paste",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus && !treeFindOpen"
+    },
+    {
+        "key": "d",
+        "command": "moveFileToTrash",
+        "when": "explorerResourceMoveableToTrash && filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus && !treeFindOpen"
+    },
+    // suggestion selection
     {
         "key": "ctrl+j",
         "command": "selectNextSuggestion",
@@ -43,5 +64,5 @@
         "command": "selectPrevPageSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
     }
-    // --------------------------
+    // ----------------------------
 ]
